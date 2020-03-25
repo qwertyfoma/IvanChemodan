@@ -1,8 +1,8 @@
 //18
 //Задание 2 +++
-let a = /http:+/.test('https://asdasdasdasd asdasd asdasdasdasd');
+let a = /http:+/.test('https://istr www.sitre sitee');
 console.log("На http:// -", a);
-let a1 = /https:+/.test('https://asdasdasdasd http://asdasd asdasdasdasd');
+let a1 = /https:+/.test('https://hgjhgj http://fghf sitee');
 console.log("На https:// -", a1);
 
 //Задание 4 +++
@@ -23,18 +23,27 @@ console.log('Формат даты: ', d);
 let d1 = /.+@.+/.test('asd@mail.ru');
 console.log('Email: ', d1);
 
-//19 - Задание 1 +++
-let str19 = 'site.ru sss site.com zzz site.net';
-let rez19 = str19.match(/site\..../g, '!');
-console.log(rez19);
+//19 
+// Задание - 2 +++
+let str192 = 'a1b c34d x567z';
+let arr = str192.match(/\d/g);
 
-//20 - Задание 1 +++
-let str20 = 'sss domain.ru zzz';
-let res20 = str20.match(/(domain+).(ru+)/);
+function arraySum(array){ 
+	var rezult = 0; 
+	for(var i = 0; i < array.length; i++){
+		rezult += array[i]; 
+	} console.log('Задание 19-2 ',rezult); 
+} 
+arraySum(arr);
 
-console.log('Найденное: ',res20[0]);
-console.log('1-й карман: ',res20[1]);
-console.log('2-й карман: ',res20[2]);
+//20 - Задание 2 +++
+let str202 = '31.12.2025';
+let res202 = str202.match(/(31+).(12+).(2025+)/);
+
+console.log('Найденное: ',res202[0]);
+console.log('1-й карман: ',res202[1]);
+console.log('2-й карман: ',res202[2]);
+console.log('3-й карман: ',res202[3]);
 
 //21 - Задание 1 +++
 let str21 = '12 34 56 78';
@@ -48,18 +57,25 @@ let res22 = str22.replace(/\d+/g, function (match) {
 });
 console.log(res22);
 
+//22 - Задание 2 +++
+let str222 = 'sss site.ru zzz site.com kkk';
+let res222 = str222.replace(/site\...+/g, function (match) {
+	return '<a href="http://' + match + '>" ' + match + '"</a>';
+});
+console.log(res222);
+
 //23 - Задание 1 +++
 let str23 = 'aaa bbb ccc xyz';
 let res23 = str23.replace(/([a-z])\1\1/g, '3 одинаковых');
 console.log(res23);
 
-//24 - Задание 1
+//25 - Задание 2 +++
+let str252 = '<a href="" class="eee" id="zzz">';
+let clas = str252.match(/eee+/g);
+let idi = str252.match(/zzz+/g);
+let res252 = clas + ' ' + idi;
 
-//25 - Задание 1 +++
-let str25 = 'func1() func2() func3()';
-let res25 = str25.replace(/func+/g);
-
-console.log(str25);
+console.log(res252); 
 
 //26 - Задание 1 +++
 let str26 = 'aaa [2] bbb [3] ccc [12] ddd';
